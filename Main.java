@@ -3,10 +3,16 @@ public class Main {
         ArvoreBinariaMorse arvore = new ArvoreBinariaMorse();
         MorseInterpreter interpretador = new MorseInterpreter(arvore);  // Cria o interpretador
         
-        // Exibe a estrutura da árvore de forma hierárquica
-        arvore.exibirArvore();
+       
+        try{ 
+            // Exibe a estrutura da árvore de forma hierárquica
+            arvore.exibirArvore();
+            // Chama o método para o usuário digitar o código Morse
+            interpretador.interpretarEntrada();
         
-        // Chama o método para o usuário digitar o código Morse
-        interpretador.interpretarEntrada();
+       }catch(Exception e){
+            System.out.println("Erro ao exibir a árvore");
+        }
+        
     }
 }

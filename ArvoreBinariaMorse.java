@@ -34,24 +34,32 @@ public class ArvoreBinariaMorse {
     }
 
     // Método para exibir a árvore binária da esquerda para direita (verticalmente)
-    public void exibirArvore() {
-        exibirArvoreRecursivo(raiz, 0);  // Chama o método recursivo começando da raiz
+    public void exibirArvore()throws Exception {
+        try{
+            exibirArvoreRecursivo(raiz, 0);  // Chama o método recursivo começando da raiz
+        }catch (Exception e){
+            System.out.println("Erro ao exibir a árvore");
+        }
     }
 
     // Método recursivo para exibir a árvore
-    private void exibirArvoreRecursivo(Nodo no, int nivel) {
-        if (no != null) {
-            // Exibe o filho direito com indentação
-            exibirArvoreRecursivo(no.filhoDireito, nivel + 1);
-            
-            // Exibe o caractere do nó atual com indentação proporcional ao nível
-            for (int i = 0; i < nivel; i++) {
-                System.out.print("    ");
-            }
-            System.out.println("-> " + (no.caractere != '\0' ? no.caractere : " "));
+    private void exibirArvoreRecursivo(Nodo no, int nivel) throws Exception {
+        try{
+            if (no != null) {
+                // Exibe o filho direito com indentação
+                exibirArvoreRecursivo(no.filhoDireito, nivel + 1);
+                
+                // Exibe o caractere do nó atual com indentação proporcional ao nível
+                for (int i = 0; i < nivel; i++) {
+                    System.out.print("    ");
+                }
+                System.out.println("-> " + (no.caractere != '\0' ? no.caractere : " "));
 
-            // Exibe o filho esquerdo com indentação
-            exibirArvoreRecursivo(no.filhoEsquerdo, nivel + 1);
+                // Exibe o filho esquerdo com indentação
+                exibirArvoreRecursivo(no.filhoEsquerdo, nivel + 1);
+            }
+        }catch (Exception e){
+            System.out.println("Erro ao exibir a árvore");
         }
     }
 
