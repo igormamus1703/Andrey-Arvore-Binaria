@@ -10,8 +10,9 @@ public class MorseInterpreter {
 
     // Método para interpretar a entrada do usuário e buscar na árvore
     public void interpretarEntrada() throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        
         try{
-            Scanner scanner = new Scanner(System.in);
             System.out.println("Digite uma palavra em código Morse (separe os caracteres por espaço, use . para ponto e - para traço): ");
             String entrada = scanner.nextLine().trim();  // Lê a entrada do usuário
 
@@ -33,6 +34,8 @@ public class MorseInterpreter {
             System.out.println("A palavra correspondente ao código Morse é: " + resultado.toString());
         }catch (Exception e){
             System.out.println("Erro ao interpretar a entrada" + e.getMessage());
+        }finally{
+            scanner.close();
         }
     }
 

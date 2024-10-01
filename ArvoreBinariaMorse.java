@@ -101,5 +101,9 @@ public class ArvoreBinariaMorse {
         inserir("--...", '7');
         inserir("---..", '8');
         inserir("----.", '9');
+        inserir(".-.-.",'+');
+        inserir("-...-", '=');
+        inserir("-..-.", '/');
+        
     }
 }
