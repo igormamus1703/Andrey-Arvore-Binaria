@@ -1,31 +1,31 @@
 public class ArvoreBinariaMorse {
-    private Nodo raiz;  // A raiz da árvore binária
+    private Node raiz;  // A raiz da árvore binária
 
     // Construtor para inicializar a árvore
     public ArvoreBinariaMorse() {
-        raiz = new Nodo();  // Inicializa com um nó raiz vazio
+        raiz = new Node();  // Inicializa com um nó raiz vazio
         preencherArvore();  // Chama o método para preencher a árvore com os caracteres Morse
     }
 
     
     // Método para retornar a raiz da árvore
-    public Nodo getRaiz() {
+    public Node getRaiz() {
         return raiz;
     }
 
 
     // Método para inserir um caractere na árvore baseado no código Morse
     public void inserir(String codigoMorse, char caractere) {
-        Nodo noAtual = raiz;
+        Node noAtual = raiz;
         for (char simbolo : codigoMorse.toCharArray()) {
             if (simbolo == '.') {
                 if (noAtual.filhoEsquerdo == null) {
-                    noAtual.filhoEsquerdo = new Nodo();
+                    noAtual.filhoEsquerdo = new Node();
                 }
                 noAtual = noAtual.filhoEsquerdo;
             } else if (simbolo == '-') {
                 if (noAtual.filhoDireito == null) {
-                    noAtual.filhoDireito = new Nodo();
+                    noAtual.filhoDireito = new Node();
                 }
                 noAtual = noAtual.filhoDireito;
             }
@@ -43,7 +43,7 @@ public class ArvoreBinariaMorse {
     }
 
     // Método recursivo para exibir a árvore
-    private void exibirArvoreRecursivo(Nodo no, int nivel) throws Exception {
+    private void exibirArvoreRecursivo(Node no, int nivel) throws Exception {
         try{
             if (no != null) {
                 // Exibe o filho direito com indentação
@@ -104,6 +104,6 @@ public class ArvoreBinariaMorse {
         inserir(".-.-.",'+');
         inserir("-...-", '=');
         inserir("-..-.", '/');
-        
+
     }
 }

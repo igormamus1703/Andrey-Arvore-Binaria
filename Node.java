@@ -1,17 +1,17 @@
-public class Nodo {
+public class Node {
     char caractere;        // Armazena o caractere (letra ou número)
-    Nodo filhoEsquerdo;    // Referência para o filho esquerdo (representa ponto .)
-    Nodo filhoDireito;     // Referência para o filho direito (representa traço -)
+    Node filhoEsquerdo;    // Referência para o filho esquerdo (representa ponto .)
+    Node filhoDireito;     // Referência para o filho direito (representa traço -)
 
     // Construtor padrão do Nodo
-    public Nodo() {
+    public Node() {
         this.caractere = '\0';  // Inicializa com o caractere nulo
         this.filhoEsquerdo = null;
         this.filhoDireito = null;
     }
 
     // Construtor com caractere
-    public Nodo(char caractere) {
+    public Node(char caractere) {
         this.caractere = caractere;
         this.filhoEsquerdo = null;
         this.filhoDireito = null;

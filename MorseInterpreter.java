@@ -13,7 +13,7 @@ public class MorseInterpreter {
         Scanner scanner = new Scanner(System.in);
         
         try{
-            System.out.println("Digite uma palavra em código Morse (separe os caracteres por espaço, use . para ponto e - para traço): ");
+            System.out.println("digite uma palavra em codigo Morse (separe os caracteres por espaço, use . para ponto e - para traço): ");
             String entrada = scanner.nextLine().trim();  // Lê a entrada do usuário
 
             String[] codigosMorse = entrada.split(" ");  // Divide a entrada em vários códigos Morse separados por espaços
@@ -42,7 +42,7 @@ public class MorseInterpreter {
     // Método para buscar o caractere na árvore baseado no código Morse
     private char buscarNaArvore(String codigoMorse) throws Exception {
         try{ 
-            Nodo noAtual = arvore.getRaiz();  // Começa a busca pela raiz da árvore
+            Node noAtual = arvore.getRaiz();  // Começa a busca pela raiz da árvore
 
             for (char simbolo : codigoMorse.toCharArray()) {
                 if (simbolo == '.') {
